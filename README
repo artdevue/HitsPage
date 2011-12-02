@@ -1,0 +1,17 @@
+﻿ Plugins HitsPage counts the number of visitors to this page (do not take into account the unique users)
+ Installation manual
+ After you install, you will create the Template Variables with the name HitsPage
+ Attention! Do not forget to specify a template for Template Variables HitsPage
+ All modules and extensions like an ordinary call Template Variables, and on the resource page, put a call placeholders [[!+hitss]]
+
+ For example: call in getResources - [[!getResources? &parents=`5` &tpl=`myRowTpl` &includeTVs=`1` &processTVs=`1`]]
+ call in the template myRowTpl Template Variables - [[tv.HitsPage]]
+ 
+ The resource, which will be counting visits to the place where you want to show the number, call pleychholder [[!+hitss]]
+ Do not place the call Template Variables HitsPage, since the result is not cached
+ 
+
+
+Arguings at a forum http://community.modx-cms.ru/blog/tips_and_tricks/1986.html
+Sentences on an e-mail: info@artdevue.com
+The author: Valentine Rasulov
