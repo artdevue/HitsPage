@@ -1,0 +1,11 @@
+Changelog file for HitsPage component.
+
+HitsPage 2.0.2
+======================================
+- Rewritten snippet to save the results in the resource properties.
+- Added a plugin to display the result in the cached resources through expansion getPage or getResources.
+
+HitsPage 2.0.0
+======================================
+- Added snippet HitsPage, now you can call the cached snippets such as getPage and getResources. Option Hits are real vremyani not cached
+- TV remote is not the right option

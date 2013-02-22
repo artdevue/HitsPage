@@ -1,17 +1,43 @@
-﻿ Plugins HitsPage counts the number of visitors to this page (do not take into account the unique users)
- Installation manual
- After you install, you will create the Template Variables with the name HitsPage
- Attention! Do not forget to specify a template for Template Variables HitsPage
- All modules and extensions like an ordinary call Template Variables, and on the resource page, put a call placeholders [[!+hitss]]
+﻿# HitsPage (MODX Revolution)
+=========
+** Pageviews for MODX Revolution.
 
- For example: call in getResources - [[!getResources? &parents=`5` &tpl=`myRowTpl` &includeTVs=`1` &processTVs=`1`]]
- call in the template myRowTpl Template Variables - [[tv.HitsPage]]
- 
- The resource, which will be counting visits to the place where you want to show the number, call pleychholder [[!+hitss]]
- Do not place the call Template Variables HitsPage, since the result is not cached
- 
+----------------------------------------
+[Homepage](http://hitspage.artdevue.com)
 
+Donwload [MODX extras](http://modx.com/extras/package/hitspage)
 
-Arguings at a forum http://community.modx-cms.ru/blog/tips_and_tricks/1986.html
-Sentences on an e-mail: info@artdevue.com
-The author: Valentine Rasulov
+## Displays results in resource
+
+### Example snippet call in resources:
+
+    ```php[[!HitsPage]]
+    ```
+
+### Example snippet call in resources and write Template Variable (TV) HitsPage:
+
+    ```php[[!HitsPage? &saveTv=`true`]]
+    ```
+
+## Output via expansion getPage or getResources
+
+### Fragment insert code in the chunk:
+
+    ```php{%hp-[[+id]]%}
+    ```
+
+*   An example of a template for the gallery
+    ```html<div>
+      <a href="[[+file]]" title="[[+fname]]">
+        <img src="[[+file:rezimgcrop=`r-150x,c-150x75`]]" alt="[[+fname]]">
+      </a>
+    </div>```
+
+*   **IMPORTANT!** To activate the plugin in this resource, you need to insert the template output tape challenge Snippets [[HPCount]]. I did it, so that no plug for lack Pars each resource.
+
+### Authors
+<table>
+  <tr>
+    <td><img src="http://www.gravatar.com/avatar/39ef1c740deff70b054c1d9ae8f86d02?s=60"></td><td valign="middle">Valentin Rasulov<br>artdevue.com<br><a href="http://artdevue.com">http://artdevue.com</a></td>
+  </tr>
+</table>
