@@ -33,10 +33,13 @@ Donwload [MODX extras](http://modx.com/extras/package/hitspage)
 *   An example of a template for the gallery
 
 ```html
-<div>
-  <a href="[[+file]]" title="[[+fname]]">
-    <img src="[[+file:rezimgcrop=`r-150x,c-150x75`]]" alt="[[+fname]]">
-  </a>
+<div class="blog_details">
+	<div class="yearbl">[[+publishedon:verticalyear]]</div>
+	<div class="day">[[+publishedon:strtotime:date=`%d`]]</div>
+	<div class="month">[[+publishedon:strtotime:date=`%B`]]</div>
+	<div class="comments">{%hp-[[+id]]%} view<i class="icon-eye-open"></i></div>
+	<div class="author">[[+createdby:userinfo=`fullname`]]</div>
+	<div class="clear"></div>
 </div>
 ```
 
