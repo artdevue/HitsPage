@@ -8,7 +8,6 @@
  * @package hitspage
  *
  */
-
 $page =  $modx->getObject('modResource', $modx->resource->get('id'));
 $view = 0;
 // Check the option to record in TV
@@ -21,8 +20,14 @@ if($saveTv == 'true') {
             $viewTv = $tvs->get('value');
             $tvs->set('value',intval($viewTv) + 1);
             if($tvs->save()) $view = $viewTv;
-        }        
-    }
+        } else {
+            $tvn = $modx->newObject('modTemplateVarResource');
+            $tvn->set('tmplvarid',$tv->id);
+            $tvn->set('contentid',$page->get('id'));
+            $tvn->set('value',1);
+            if($tvn->save()) $view = 1;
+        }       
+    } 
 } else {
     $view = $page->getProperty('hitts','hitspage',$view);
 }
