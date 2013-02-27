@@ -1,5 +1,9 @@
 Changelog file for HitsPage component.
 
+HitsPage 2.0.3
+======================================
+- Fixed the snippet call with parameter saveTv = `true`, not created TV.
+
 HitsPage 2.0.2
 ======================================
 - Rewritten snippet to save the results in the resource properties.
