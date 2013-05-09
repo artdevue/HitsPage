@@ -1,5 +1,9 @@
 Changelog file for HitsPage component.
 
+HitsPage 2.0.4
+======================================
+- Fixed search and replace with check identical types
+
 HitsPage 2.0.3
 ======================================
 - Fixed the snippet call with parameter saveTv = `true`, not created TV.

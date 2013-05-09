@@ -4,7 +4,7 @@ switch ($modx->event->name) {
         if($modx->hpCount === true) {
             // get a reference to the output
 			$output = &$modx->resource->_output;
-    		if (preg_match_all ("/{%hp-(.*?)%}/",$output , $hp_list)) {
+    		if (preg_match_all ("/{%hp-(\d+?)%}/",$output , $hp_list)) {
 			  // If the array is not empty, choose the number of comments on the resource id (column rid)
 			  if (is_array($hp_list)) {
 				  array_walk($hp_list[1], 'intval');
@@ -15,7 +15,7 @@ switch ($modx->event->name) {
 					  foreach ($resultsHp as $rHp) {
 						  $objHP = json_decode($rHp['properties']);
 						  if (in_array($rHp['id'],$hp_list[1])) {
-							  $hp_list[1][array_search($rHp['id'],$hp_list[1])] =  intval($objHP->hitspage->hitts);
+							  $hp_list[1][array_search($rHp['id'],$hp_list[1],true)] =  intval($objHP->hitspage->hitts);
 						  }
 					  }
 				  }
