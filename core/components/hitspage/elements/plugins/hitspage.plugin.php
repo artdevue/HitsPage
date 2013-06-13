@@ -1,7 +1,7 @@
 <?php
 switch ($modx->event->name) {
     case 'OnWebPagePrerender':
-        if($modx->hpCount === true) {
+        if(isset($modx->hpCount) && $modx->hpCount === true) {
             // get a reference to the output
 			$output = &$modx->resource->_output;
     		if (preg_match_all ("/{%hp-(\d+?)%}/",$output , $hp_list)) {
